@@ -14,10 +14,21 @@ app.get("/", (req, res) => {
     res.status(200).send("<h1>Wellcome to the urlShortner</h1>");
 });
 
-app.post("/users", async (req, res) => {
+app.get("/users", async (req, res) => {
 const users = await User.find({});
     res.status(200).send(users);
 })
+
+app.get("/urls", async (req, res) => {
+    const urls = await Url.find({});
+    res.status(200).send(urls);
+    
+});
+
+app.get("/qrcodes", async (req, res) => {
+    const qrcodes = await Qrcode.find({});
+    res.status(200).send(qrcodes);
+});
 
 app.listen(process.env.PORT, () =>{
     console.log(`Server running on port: ${process.env.PORT}`);
