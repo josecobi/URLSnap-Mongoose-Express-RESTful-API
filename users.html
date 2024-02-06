@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script href="findinfo.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h4>Get links from a specific user</h4>
+    <form method="get" class="users-form">
+        <div class="form-div">
+            <label for="user">Enter user name</label>
+            <input type="text" name="user" id="name" required/>
+        </div>
+    </form>
+    <div class="col-8 d-flex flex-column flex-nowrap justify-content-center align-items-center p-5 g-3 border border-secondary-subtle rounded bg-light-subtle mb-4">
+        <h4>Users</h4>
+            <p> List all your company's employees using URLSnap services</p>
+            <button class="getLinksBtn btn btn-success p-2 col-2" type="submit">Show Users</button>
+            
+      </div>
+    <div class="col-10 m-3">
+        <table class="list-of-links table table-striped rounded-3 table-responsive">
+          <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Number of links</th>
+            <th scope="col">Number of QRCodes</th>
+          </tr>
+          </thead>
+          <tbody class="table-body overflow-hidden">
+    
+          </tbody>
+        </table>
+    </div>
+   
+    
+</body>
+</html>
