@@ -1,18 +1,13 @@
 import clearLinks from "./clearLinks.js";
 import createAnchor from "./createanchor.js";
-import {listOfLinks, tableBody, originalLink} from '../app.js';
+import {listOfDataItems, tableBody, originalLink} from '../index.js';
 
 
 /** Declare function that adds links to a table.
 It takes the array from the result given by the API 
 and passes the data from each object into a new row **/
-
-
-//<<<<<<<<<<<<<<<<<<<<<<<<<<< TO-DO: CREATE addUsersToTable and addQrcodesToTable functions !!!!!
-
-
 export function addLinksToTable(arr){
-    listOfLinks.style.display = 'block';
+    listOfDataItems.style.display = 'block';
  
     // Clear table if there is any link
     clearLinks();
@@ -71,3 +66,6 @@ export function addLinksToTable(arr){
         tableBody.appendChild(tableRow);   
     })    
 }
+
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<< TO-DO: CREATE addUsersToTable and addQrcodesToTable functions !!!!!

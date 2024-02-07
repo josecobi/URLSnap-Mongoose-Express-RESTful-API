@@ -1,3 +1,5 @@
+import {API_KEY} from '../index.js.js';
+
 //function to handle button clicks
 export default async function handleButtonClick(event) {
     const id = event.target.getAttribute("data-id");
