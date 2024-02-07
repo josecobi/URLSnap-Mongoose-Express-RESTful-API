@@ -7,6 +7,7 @@ import User  from './backend/models/usersmodel.mjs';
 import Url from './backend/models/urlmodel.mjs';
 import Qrcode from './backend/models/qrcode.mjs';
 import ejs from "ejs";
+import api from "./backend/routes/api.mjs"
 const app = express();
 
 await mongoose.connect(process.env.ATLAS_URI);
@@ -24,24 +25,9 @@ app.set("views", "./backend/views");
 //serve static files
 app.use(express.static("frontend"));
 
-//middleware to check for API keys!
-app.use("/api", function (req, res, next) {
-  var key = req.headers["x-api-key"];
-  console.log("key: ", key);
-  console.log("apikeys data:", apiKeysData);
-  // Check for the absence of a key.
-  if (!key) next(error(400, "API Key Required"));
-  
-  // Check for key validity.
-  if (apiKeysData.indexOf(key) === -1) next(error(401, "Invalid API Key"));
-
-  // Valid key! Store it in req.key for route access.
-  req.key = key;
-  next();
-});
-
 
 // Use routes
+app.use("/api", api)
 app.use("/apikey", apiKeysRoute);
 app.use("/api/shortenUrl", shortenUrl);
 app.use("/api/getLinks", getLinks);
@@ -80,6 +66,7 @@ app.get("/qrcodes", (req, res) => {
 app.use((req, res, next) => {
   next(error(404, "Resource Not Found"));
 });
+
 // Error-handling middleware.
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
