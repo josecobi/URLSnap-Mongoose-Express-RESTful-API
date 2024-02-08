@@ -52,7 +52,7 @@ app.use("/api/users", usersroute);
 // Middleware to get qrcodes
 app.use("/api/qrcodes", qrcodesroute);
 
-
+//>>>>>>>>>>>>>>>>>>>>>>>NOTE THAT THE FRONTEND IS NOT FINISHED YET. PLEASE USE POSTMAN TO TEST THE API
 // Route to render home
 app.get("/", (req, res) => {
     res.status(200).render("index");
