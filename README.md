@@ -19,7 +19,7 @@
 - `apikeymodel.mjs`: Defines the model/schema for API keys.
 - `qrcode.mjs`: Defines the model/schema for QR codes.
 - `urlmodel.mjs`: Defines the model/schema for URLs.
-- `usersmodel.mjs`: Defines the model/schema for users.
+- `usersmodel.mjs`: Defines the model/schema for users. Includes validation for the username, email and password fields.
 
 ### 3. Routes
 
