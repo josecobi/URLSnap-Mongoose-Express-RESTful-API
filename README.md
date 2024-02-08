@@ -1,5 +1,26 @@
+## Note the views and frontend are not finished yet. They will be updated soon. In order to test te API we will be using Postman (https://www.postman.com/). See more instructions below.
+
+
 # API to handle requests 
  This is an admin interface to analize and manage the use of shortened links and qr codes by the employees of the company. It is a Node.js application using the Express framework for building a web server. It also utilizes Mongoose for MongoDB database interaction, EJS for rendering views, NanoId for generating unique short URLs, and other npm packages like dotenv and nodemon for environment variables and automatic server restarts during development. 
+
+ - [Backend Files](#backend-files)
+  - [Server.js](#1-serverjs)
+  - [Models](#2-models)
+  - [Routes](#3-routes)
+  - [Utilities](#4-utilities)
+  - [Views](#5-views)
+- [Instructions](#instructions)
+  - [Clone Repository and Install Dependencies](#clone-repository-and-install-dependencies)
+  - [Set up Environment Variables](#set-up-environment-variables)
+  - [Import Sample Data into MongoDB Compass](#import-sample-data-into-mongodb-compass)
+  - [Run the Code](#run-the-code)
+- [Test the API using Postman](#test-the-api-using-postman)
+  - [Route: /api/getLinks (GET)](#route-api-getlinks-get)
+  - [Route: /api/getLinksByUser/:id (GET)](#route-api-getlinksbyuserid-get)
+  - [Route: /api/manipulateLink/:id (DELETE and PUT)](#route-api-manipulatelinkid-delete-and-put)
+  - [Route: /api/users (POST)](#route-api-users-post)
+- [Contact Information](#contact-information)
 
 ## Backend Files
 
