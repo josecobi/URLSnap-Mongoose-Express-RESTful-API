@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from "mongoose";
 import error from "../utilities/error.mjs";
 import Url from "../models/urlmodel.mjs"
 const router = express.Router();
@@ -8,7 +9,7 @@ const router = express.Router();
     .get( async (req, res, next) => {
         try{
             console.log("getting link by id...");
-            const userId = mongoose.Types.Object(req.params.id);
+            const userId = new mongoose.Types.ObjectId(req.params.id);
             const userUrls = await Url.find({ user: userId });
             if(!userUrls){
                 console.log("no link data");
