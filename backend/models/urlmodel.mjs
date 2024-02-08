@@ -13,6 +13,7 @@ const urlSchema = new Schema({
 
 // Create an index on the 'user' field
 urlSchema.index({ user: 1 });
+urlSchema.index({ shortUrl: 1 });
 
 //create a model for the url
 const Url = model("Url", urlSchema);

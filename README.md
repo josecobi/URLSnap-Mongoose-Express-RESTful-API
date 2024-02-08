@@ -81,3 +81,78 @@ Replace your_mongodb_connection_string with the connection string for your Mongo
     Open your web browser and navigate to http://localhost:your_preferred_port to interact with the API.
 
 Now, you have cloned the repository, imported sample data into MongoDB Compass, and started the server. You can test the API by using the provided routes and data.
+
+## Test the API using Postman
+Note the views and frontend are not finished yet. They will be updated soon. In order to test te API we will be using Postman (https://www.postman.com/). Let's assume your server is running locally on http://localhost:your_preferred_port.
+### Route: /api/getLinks (GET)
+
+    Open Postman:
+        Launch Postman on your machine.
+
+    Create a new GET request:
+        Set the request type to GET.
+        Enter the URL: http://localhost:your_preferred_port/api/getLinks.
+        Click "Send" to make the request.
+
+### Route: /api/getLinksByUser/:id (GET)
+
+    Get User ID:
+        You need a valid User ID to test this route. Retrieve a user's ID from your MongoDB database.
+
+    Open Postman:
+        Create a new GET request.
+        Enter the URL, replacing :id with the actual user ID: http://localhost:your_preferred_port/api/getLinksByUser/:id.
+        Click "Send" to make the request.
+
+### Route: /api/manipulateLink/:id (DELETE and PUT)
+
+    Get URL ID:
+        You need a valid Url ID to test this route. Retrieve a URL's ID from your MongoDB database.
+
+    Open Postman:
+        Create a new DELETE request.
+        Enter the URL, replacing :id with the actual URL ID: http://localhost:your_preferred_port/api/manipulateLink/:id.
+        Click "Send" to delete the URL.
+
+    Open Postman:
+        Create a new PUT request.
+        Enter the URL, replacing :id with the actual URL ID: http://localhost:your_preferred_port/api/manipulateLink/:id.
+        Click "Send" to update the URL.
+
+### Route: /api/users (POST)
+
+    Open Postman:
+        Create a new POST request.
+        Enter the URL: http://localhost:your_preferred_port/api/users.
+        Set the request type to POST.
+        In the request body, provide JSON data for a new user, including the API key:
+
+        json
+
+        {
+          "username": "exampleUser",
+          "email": "user@example.com",
+          "password": "userPassword",
+          "apiKey": "example"
+        }
+
+        Click "Send" to create a new user.
+
+### Route: /api (Middleware to Check API Key)
+
+    Open Postman:
+
+        Create a new GET request.
+
+        Enter any URL, e.g., http://localhost:your_preferred_port/api/test.
+
+        Set the request type to GET.
+
+        In the Headers section, add a key-value pair:
+            Key: x-api-key
+            Value: example (or any valid API key).
+
+        Click "Send" to test the middleware. The middleware will check the API key, and if it's valid, you'll receive a response.
+
+Ensure you replace placeholders like :id with actual IDs from your MongoDB database.
+
