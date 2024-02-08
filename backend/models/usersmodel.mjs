@@ -22,7 +22,8 @@ const userSchema = new Schema({
     //add default value for api key for testing
     apiKey: {
         type: String,
-        default: "example"
+        default: "example",
+        required: true
     },
     //reference to the links and qrcodes models
     links: [{ type: Schema.Types.ObjectId, ref: 'Url' }],

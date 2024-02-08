@@ -71,7 +71,7 @@ Replace your_mongodb_connection_string with the connection string for your Mongo
     Connect to your MongoDB server.
     Create a new database (e.g., URLSnapDB).
     Select the database and navigate to the "Collection" tab.
-    Import sample data from the json files in the "sample-data" folder into a new collection within the database.
+    Import sample data from the each json file in the "sample-data" folder. Create a new collection within the database for each json file.
 
 ### Run the Code
 
@@ -84,6 +84,7 @@ Now, you have cloned the repository, imported sample data into MongoDB Compass, 
 
 ## Test the API using Postman
 Note the views and frontend are not finished yet. They will be updated soon. In order to test te API we will be using Postman (https://www.postman.com/). Let's assume your server is running locally on http://localhost:your_preferred_port.
+
 ### Route: /api/getLinks (GET)
 
     Open Postman:
@@ -92,6 +93,10 @@ Note the views and frontend are not finished yet. They will be updated soon. In 
     Create a new GET request:
         Set the request type to GET.
         Enter the URL: http://localhost:your_preferred_port/api/getLinks.
+        Set Headers: 
+            - key: `x-api-key`
+            - value: `example`
+        Enter
         Click "Send" to make the request.
 
 ### Route: /api/getLinksByUser/:id (GET)
@@ -102,6 +107,9 @@ Note the views and frontend are not finished yet. They will be updated soon. In 
     Open Postman:
         Create a new GET request.
         Enter the URL, replacing :id with the actual user ID: http://localhost:your_preferred_port/api/getLinksByUser/:id.
+        Set Headers: 
+            - key: `x-api-key`
+            - value: `example`
         Click "Send" to make the request.
 
 ### Route: /api/manipulateLink/:id (DELETE and PUT)
@@ -112,11 +120,17 @@ Note the views and frontend are not finished yet. They will be updated soon. In 
     Open Postman:
         Create a new DELETE request.
         Enter the URL, replacing :id with the actual URL ID: http://localhost:your_preferred_port/api/manipulateLink/:id.
+        Set Headers: 
+            - key: `x-api-key`
+            - value: `example`
         Click "Send" to delete the URL.
 
     Open Postman:
         Create a new PUT request.
         Enter the URL, replacing :id with the actual URL ID: http://localhost:your_preferred_port/api/manipulateLink/:id.
+        Set Headers: 
+            - key: `x-api-key`
+            - value: `example`
         Click "Send" to update the URL.
 
 ### Route: /api/users (POST)
@@ -125,6 +139,9 @@ Note the views and frontend are not finished yet. They will be updated soon. In 
         Create a new POST request.
         Enter the URL: http://localhost:your_preferred_port/api/users.
         Set the request type to POST.
+        Set Headers: 
+            - key: `x-api-key`
+            - value: `example
         In the request body, provide JSON data for a new user, including the API key:
 
         json
@@ -136,23 +153,10 @@ Note the views and frontend are not finished yet. They will be updated soon. In 
           "apiKey": "example"
         }
 
-        Click "Send" to create a new user.
+        Click "Send" to create a new user. Also, try using an username or email that already exists or leaving  any of the fields empty to test the validation.
 
-### Route: /api (Middleware to Check API Key)
-
-    Open Postman:
-
-        Create a new GET request.
-
-        Enter any URL, e.g., http://localhost:your_preferred_port/api/test.
-
-        Set the request type to GET.
-
-        In the Headers section, add a key-value pair:
-            Key: x-api-key
-            Value: example (or any valid API key).
-
-        Click "Send" to test the middleware. The middleware will check the API key, and if it's valid, you'll receive a response.
 
 Ensure you replace placeholders like :id with actual IDs from your MongoDB database.
+
+Contact info jose.lopez.cobano@gmail.com (CobiDev)
 
