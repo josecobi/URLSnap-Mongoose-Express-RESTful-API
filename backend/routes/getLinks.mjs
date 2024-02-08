@@ -8,8 +8,7 @@ const router = express.Router();
     .get( async (req, res, next) => {
         try{
             console.log("getting all links...");
-            // const apiKey = req.headers['x-api-key'];
-            const linksDataArray = await Url.find({})//.select("-_id");
+            const linksDataArray = await Url.find({})
             if(!linksDataArray){
                 console.log("no links data");
                 next(error(404, "Could not find links"));

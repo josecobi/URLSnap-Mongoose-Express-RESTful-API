@@ -11,14 +11,14 @@ export function addLinksToTable(arr){
  
     // Clear table if there is any link
     clearLinks();
-    //We set the counter to 1 because there is one sample row. If there wasn't sample row it would be counter = 0
-    let counter = 1;
+   
+    let linkCounter = 0;
 
     arr.forEach((object) => {
         // Number each row        
         let tableRow = document.createElement('tr');
         let rowNumber = document.createElement('th');
-        rowNumber.textContent = counter++;
+        rowNumber.textContent = linkCounter++;
         rowNumber.setAttribute("scope", "row");
         tableRow.appendChild(rowNumber);
         

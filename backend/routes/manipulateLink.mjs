@@ -16,8 +16,8 @@ router
                 res.json({ message: `Deleted url with ID ${id}`, shortUrl: linkToDelete });
             }
             catch(error){
-                console.error("Link not found. ", error);
-                next(error);
+                console.error("Link not found.", error);
+                next(error(404, "Link not found."));
             }
         })
         .put(async (req, res, next) => {           
@@ -29,7 +29,7 @@ router
             }
             catch(error){
                 console.error("Link not found. ", error);
-                next(error);
+                next(error(404, "Link not found."));
             }           
         });
         

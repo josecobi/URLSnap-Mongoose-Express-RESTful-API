@@ -5,8 +5,8 @@
 <body>
     <%- include('./partials/nav.ejs') %>
     <main class="row d-flex flex-column flex-nowrap justify-content-center align-items-center page-body">
-        <div class="col-8 d-flex flex-column flex-nowrap justify-content-center align-items-center p-5 g-3 border border-secondary-subtle rounded bg-light-subtle mb-4">
-            <h4>Get links from a specific user</h4>
+        <!--<div  class="col-8 d-flex flex-column flex-nowrap justify-content-center align-items-center p-5 g-3 border border-secondary-subtle rounded bg-light-subtle mb-4">
+            <h4 style="display: none">Get links from a specific user</h4>
             <form method="get" class="users-form">
                 <div class="form-div">
                     <label for="user">Enter user name</label>
@@ -14,9 +14,9 @@
                     <a class="getLinksBtn btn btn-success p-2 col-2" href="./api/getLinks" type="submit">Show Links</a>
                 </div>
             </form>
-        </div>
+        </div>-->
         <div class="col-10 m-3">
-            <table class="list-of-data-items table table-striped rounded-3 table-responsive">
+            <table style="display: none" class="list-of-data-items table table-striped rounded-3 table-responsive">
               <thead>
                 <tr>
                 <th scope="col">#</th>
@@ -35,12 +35,12 @@
         </div>
     <div class="col-8 d-flex flex-column flex-nowrap justify-content-center align-items-center p-5 g-3 border border-secondary-subtle rounded bg-light-subtle mb-4">
         <h4>Links</h4>
-            <p> In this section, gain insights into shortened URLs from specific users effortlessly. Discover details such as the shortened link itself, the original link it corresponds to, and the precise date and time it was created. Keep track of your company URL shortening activity with ease and stay informed about the lifecycle of each link at a glance.</p>
+            <p> In this section, gain insights into shortened URLs from users effortlessly. Discover details such as the shortened link itself, the original link it corresponds to, and the precise date and time it was created. Keep track of your company URL shortening activity with ease and stay informed about the lifecycle of each link at a glance.</p>
             <a class="getLinksBtn btn btn-success p-2 col-2" href="./api/getLinks" type="submit">Show Links</a>
             
       </div>
     <div class="col-10 m-3">
-        <table class="list-of-data-items table table-striped rounded-3 table-responsive">
+        <table style="display: none" class="list-of-data-items table table-striped rounded-3 table-responsive">
           <thead>
             <tr>
             <th scope="col">#</th>
