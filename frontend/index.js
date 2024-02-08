@@ -1,5 +1,5 @@
 import { getListOfLinks, getListOfQrcodes, getListOfUsers } from "./helpers.mjs/getList";
-const API_KEY = "example"
+export const API_KEY = "example"
 // LOGIC FOR THE GET LINKS FUNCTION
 // Variables 
 const getLinksBtn = document.querySelector(".getLinksBtn");

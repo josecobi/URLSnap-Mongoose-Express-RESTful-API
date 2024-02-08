@@ -8,6 +8,8 @@ import Url from './backend/models/urlmodel.mjs';
 import Qrcode from './backend/models/qrcode.mjs';
 import ejs from "ejs";
 import api from "./backend/routes/api.mjs"
+import getLinks from "./backend/routes/getLinks.mjs"
+import manipulateLink from "./backend/routes/manipulateLink.mjs"
 const app = express();
 
 await mongoose.connect(process.env.ATLAS_URI);
@@ -28,8 +30,6 @@ app.use(express.static("frontend"));
 
 // Use routes
 app.use("/api", api)
-app.use("/apikey", apiKeysRoute);
-app.use("/api/shortenUrl", shortenUrl);
 app.use("/api/getLinks", getLinks);
 app.use("/api/manipulateLink", manipulateLink);
 app.get("/", (req, res) => {

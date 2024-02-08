@@ -20,7 +20,7 @@ export async function getListOfLinks(){
                 return res.json();
             }).then(function(body) {
             console.log("body: ", body);
-                addLinksToTable(body); //<<<<<<<<<<<<<<<<<<<<<<<<<<<< FIX THIS!!
+                addLinksToTable(body); 
             });    
     }
     catch(error){
@@ -48,7 +48,7 @@ export async function getListOfUsers(){
                 return res.json();
             }).then(function(body) {
             console.log("body: ", body);
-                addUsersToTable(body); //<<<<<<<<<<<<<<<<<<<<<<<<<<<< FIX THIS!!
+                addUsersToTable(body);
             });    
     }
     catch(error){
@@ -74,7 +74,7 @@ export async function getListOfQrcodes(){
                 return res.json();
             }).then(function(body) {
             console.log("body: ", body);
-                addQrcodesToTable(body); //<<<<<<<<<<<<<<<<<<<<<<<<<<<< FIX THIS!!
+                addQrcodesToTable(body);
             });    
     }
     catch(error){
