@@ -1,10 +1,9 @@
 import express from "express";
 const router = express.Router();
 import Apikey from "../models/apikeymodel.mjs";
+import error from "../utilities/error.mjs";
 
-
-
-//middleware to check for API keys <<<<<<<<<<<<<<<<<<<<<<<<<<< TODO make sure this async function works
+//middleware to check for API keys 
 const api = router.use("/api", async function (req, res, next) {
     try{
     const apiKeysData = await Apikey.find({});

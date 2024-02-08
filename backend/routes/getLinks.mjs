@@ -23,5 +23,5 @@ const router = express.Router();
             next(error);
         }
     })
-
+    
 export default router;
